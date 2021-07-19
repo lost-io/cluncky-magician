@@ -1,0 +1,4 @@
+
+
+runtests:
+	go test ./tests
