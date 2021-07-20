@@ -25,11 +25,21 @@ Basic api that retuns data based on a standard 52 card deck so no jokers..
 
 ````json
 {
-	id: string,
-	suit: int32,
-	value: int32
+	id: int,
+	suit: int,
+	value: int
 }
 ````
+
+### Card Functions:
+ - get card id: id of a card should always be the same due to generation
+ - get card name: __suit__ + __value__ etc: ace of hearts
+
+### Deck Functions:
+- get a deck of unshuffled cards etc: hearts ace to king -> then diamonds,clovers,spades
+- get a deck of shuffled cards: cards have random positions in the deck
+
+## Test Suit:
 
 
 

@@ -1,10 +1,10 @@
-package main
+package main_tests
 
 import (
 	"testing"
 )
 
-func Main_Smoke_test(t *testing.T) {
+func Test_Smoke(t *testing.T) {
 	if 2+2 != 4 {
 		t.Error("Some Odd Math going on yea?")
 	}
