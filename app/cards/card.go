@@ -75,6 +75,7 @@ func Generatecards() (deck []Card) {
 	return cards
 }
 
+// A recursive function that scd -huffles a deck up to 25 times
 func ShuffleDeck(deck []Card, iterations int) (outdeck []Card) {
 
 	// Prevent redundant Reshuffles
