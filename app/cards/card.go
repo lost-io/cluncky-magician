@@ -2,6 +2,7 @@ package cards
 
 import (
 	"math/rand"
+	"time"
 )
 
 type Suit int
@@ -80,14 +81,27 @@ func ShuffleDeck(deck []Card, iterations int) (outdeck []Card) {
 	if iterations > 25 {
 		iterations = 25
 	}
-	// no more shuffeling
+	// no more shuffeling and return result
 	if iterations == 0 {
 		return deck
 	}
 
-	sDeck := deck
-	rand.Shuffle(len(sDeck), func(i, j int) { sDeck[i], sDeck[j] = sDeck[j], sDeck[i] })
+	// shuffle deck with function from golang standard libs
+	rand.Shuffle(len(deck), func(i, j int) { deck[i], deck[j] = deck[j], deck[i] })
 
 	iterations--
-	return ShuffleDeck(sDeck, iterations)
+	return ShuffleDeck(deck, iterations)
+}
+
+// Get Card form a Supplied deck
+func GetRandomCardFromDeck(deck []Card) (card Card) {
+	rand.Seed(time.Now().UnixNano()) //changes seed everytime this function is called
+	num := rand.Intn(len(deck))
+	return deck[num]
+}
+
+// Get Card from a newly generated deck
+func GetRandomCard() (card Card) {
+	deck := Generatecards()
+	return GetRandomCardFromDeck(deck)
 }
