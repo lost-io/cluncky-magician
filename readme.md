@@ -41,6 +41,15 @@ Basic api that retuns data based on a standard 52 card deck so no jokers..
 
 ## Test Suit:
 
+### Api Tests:
+
+
+
+### Card Tests:
+- When generating cards the expected number of cards should be 52 if it is a standard card deck
+- When Shuffling a deck the deck should have different cards i different positions. check 5 postions
+- Get Random card: pick two cards for a deck the cards should not be the same.
+
 
 
 
