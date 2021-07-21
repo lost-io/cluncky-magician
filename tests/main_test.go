@@ -9,3 +9,7 @@ func Test_Smoke(t *testing.T) {
 		t.Error("Some Odd Math going on yea?")
 	}
 }
+
+func Test_Api_is_running(t *testing.T) {
+
+}

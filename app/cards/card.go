@@ -8,6 +8,7 @@ import (
 type Suit int
 type CardValue int
 
+//StandardDeck Suit Constants
 const (
 	heart Suit = iota + 1
 	diamond
@@ -15,6 +16,7 @@ const (
 	spade
 )
 
+//StandardDeck CardValue Constants
 const (
 	ace CardValue = iota + 1
 	two
@@ -38,25 +40,42 @@ func (cv CardValue) String() string {
 	return [...]string{"ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king"}[cv-1]
 }
 
-type (
-	StandardCard struct {
-		id    int
-		suit  int
-		value int
-	}
-)
+// Standard Card
+type StandardCard struct {
+	id    int `json: "id"`
+	suit  int `json: suit`
+	value int `json: cardvalue`
+}
 
-type (
-	Card interface {
-		Id() int
-		Name() string
-	}
-)
+// Just for Show but should be allowed when implementing the Card Interface
+type TarrotCard struct {
+	id     int
+	suit   int
+	value  int
+	arcana string
+}
 
+type Card interface {
+	Id() int
+	Name() string
+	Suit() string
+	CardValue() string
+}
+
+// return id of card
 func (card StandardCard) Id() int {
 	return card.id
 }
 
+func (card StandardCard) Suit() string {
+	return Suit.String(Suit(card.suit))
+}
+
+func (card StandardCard) CardValue() string {
+	return CardValue.String(CardValue(card.value))
+}
+
+// returns name of card by optaining the suit and cardvalue values
 func (card StandardCard) Name() string {
 	return CardValue.String(CardValue(card.value)) + " of " + Suit.String(Suit(card.suit))
 }
