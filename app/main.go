@@ -1,14 +1,9 @@
 package main
 
 import (
-	"card_api/app/cards"
 	"net/http"
 	//"fmt"
 )
-
-type deck struct {
-	cards []cards.Card
-}
 
 func deckHandler(w http.ResponseWriter, r *http.Request) {
 

@@ -1,6 +1,7 @@
 package main_tests
 
 import (
+	"net/http"
 	"testing"
 )
 
@@ -11,5 +12,12 @@ func Test_Smoke(t *testing.T) {
 }
 
 func Test_Api_is_running(t *testing.T) {
+	req, err := http.NewRequest("GET", "/entries", nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+}
+
+func Test_Api_returns_card(t *testing.T) {
 
 }
