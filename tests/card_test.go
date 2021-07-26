@@ -5,24 +5,43 @@ import (
 	"testing"
 )
 
-func Test_StandardDeck_GenerateCards_card_count_equals_52(t *testing.T) {
-	expected_count := 52
-	actual := len(cards.Generatecards())
-	if expected_count != actual {
-		t.Error("Test Failed: actual count is {} but should be {}", actual, expected_count)
+func Test_StandardCard_Id__returns_int(t *testing.T) {
+	expected_val := 0
+	cardsuit := cards.Suit.String(cards.Suit(1))
+	cardvalue := cards.CardValue.String(cards.CardValue(1))
+	card := cards.StandardCard{ID: 0, Suit: cardsuit, Value: cardvalue}
+	if card.Id() != expected_val {
+		t.Error("Card Value did not match expectedvalue")
 	}
 }
 
-func Test_StandardDeck_GetCard_card_is_correct_id_test(t *testing.T) {
-	var deck cards.StandardDeck
-	deck.GenerateDeck(&deck.Cards)
-	expected_card := 1
-	actual, err := deck.GetCardById(1)
-	if err != nil {
-		t.Error(err)
+func Test_StandardCard_Suit_returns_string(t *testing.T) {
+	expected_val := "heart"
+	cardsuit := cards.Suit.String(cards.Suit(1))
+	cardvalue := cards.CardValue.String(cards.CardValue(1))
+	card := cards.StandardCard{0, cardsuit, cardvalue}
+	if card.SuitValue() != expected_val {
+		t.Error("Card Value did not match expectedvalue")
 	}
-	if expected_card != actual.Id() {
-		t.Error("Test Failed: card with id 1 should be {} but got {}", expected_card, actual)
+}
+
+func Test_StandardCard_CardValue_returns_string(t *testing.T) {
+	expected_val := "ace"
+	cardsuit := cards.Suit.String(cards.Suit(1))
+	cardvalue := cards.CardValue.String(cards.CardValue(1))
+	card := cards.StandardCard{0, cardsuit, cardvalue}
+	if card.CardValue() != expected_val {
+		t.Error("Card Value did not match expectedvalue")
+	}
+}
+
+func Test_StandardCard_Name_returns_string(t *testing.T) {
+	expected_val := "ace of heart"
+	cardsuit := cards.Suit.String(cards.Suit(1))
+	cardvalue := cards.CardValue.String(cards.CardValue(1))
+	card := cards.StandardCard{0, cardsuit, cardvalue}
+	if card.Name() != expected_val {
+		t.Error("Card Value did not match expectedvalue")
 	}
 }
 

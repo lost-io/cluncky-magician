@@ -23,9 +23,9 @@ func (deck StandardDeck) GenerateDeck(cards *[]Card) {
 	for i := 1; i < 5; i++ {
 		for k := 1; k < 14; k++ {
 			card := StandardCard{}
-			card.value = CardValue.String(CardValue(k))
-			card.suit = Suit.String(Suit(i))
-			card.id = i + k - 2
+			card.Value = CardValue.String(CardValue(k))
+			card.Suit = Suit.String(Suit(i))
+			card.ID = i + k - 2
 			*cards = append(*cards, card)
 		}
 	}
@@ -59,12 +59,6 @@ func ShuffleDeck(deck []Card, iterations int) (outdeck []Card) {
 	return ShuffleDeck(deck, iterations)
 }
 
-type Err_CardNotFound struct{}
-
-func (m *Err_CardNotFound) Error() string {
-	return "card not found"
-}
-
 // Get Card form a Supplied deck
 func GetRandomCardFromDeck(deck []Card) (card Card) {
 	rand.Seed(time.Now().UnixNano()) //changes seed everytime this function is called
@@ -84,9 +78,9 @@ func Generatecards() (deck []Card) {
 	for i := 1; i < 5; i++ {
 		for k := 1; k < 14; k++ {
 			card := StandardCard{}
-			card.value = CardValue.String(CardValue(k))
-			card.suit = Suit.String(Suit(i))
-			card.id = i + k - 2
+			card.Value = CardValue.String(CardValue(k))
+			card.Suit = Suit.String(Suit(i))
+			card.ID = i + k - 2
 			cards = append(cards, card)
 		}
 	}
