@@ -1,0 +1,9 @@
+version: "3.8"
+services: 
+    card_api:
+        build:
+            context: .
+        container_name: card_api
+        image: lostio/card_api:1.0.0
+        ports:
+        - 8080:8080
