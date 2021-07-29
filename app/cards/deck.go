@@ -8,7 +8,7 @@ import (
 type Deck interface {
 	GetDeck() []Card
 	GenerateDeck(cards *[]Card)
-	GetCardById(id int) Card
+	GetCardById(id int) (Card, error)
 }
 
 type StandardDeck struct {
@@ -20,12 +20,14 @@ func (deck StandardDeck) GetDeck() []Card {
 }
 
 func (deck StandardDeck) GenerateDeck(cards *[]Card) {
+	id := 0
 	for i := 1; i < 5; i++ {
 		for k := 1; k < 14; k++ {
+			id++
 			card := StandardCard{}
 			card.Value = CardValue.String(CardValue(k))
 			card.Suit = Suit.String(Suit(i))
-			card.ID = i + k - 2
+			card.ID = id //the minus two is so the first id = 0
 			*cards = append(*cards, card)
 		}
 	}

@@ -26,8 +26,8 @@ Basic api that retuns data based on a standard 52 card deck so no jokers..
 ```` golang
 {
 	id: int,
-	suit: int,
-	value: int
+	suit: string,
+	value: string
 }
 ````
 

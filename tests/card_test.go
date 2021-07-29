@@ -19,7 +19,7 @@ func Test_StandardCard_Suit_returns_string(t *testing.T) {
 	expected_val := "heart"
 	cardsuit := cards.Suit.String(cards.Suit(1))
 	cardvalue := cards.CardValue.String(cards.CardValue(1))
-	card := cards.StandardCard{0, cardsuit, cardvalue}
+	card := cards.StandardCard{ID: 0, Suit: cardsuit, Value: cardvalue}
 	if card.SuitValue() != expected_val {
 		t.Error("Card Value did not match expectedvalue")
 	}
@@ -29,7 +29,7 @@ func Test_StandardCard_CardValue_returns_string(t *testing.T) {
 	expected_val := "ace"
 	cardsuit := cards.Suit.String(cards.Suit(1))
 	cardvalue := cards.CardValue.String(cards.CardValue(1))
-	card := cards.StandardCard{0, cardsuit, cardvalue}
+	card := cards.StandardCard{ID: 0, Suit: cardsuit, Value: cardvalue}
 	if card.CardValue() != expected_val {
 		t.Error("Card Value did not match expectedvalue")
 	}
@@ -39,7 +39,7 @@ func Test_StandardCard_Name_returns_string(t *testing.T) {
 	expected_val := "ace of heart"
 	cardsuit := cards.Suit.String(cards.Suit(1))
 	cardvalue := cards.CardValue.String(cards.CardValue(1))
-	card := cards.StandardCard{0, cardsuit, cardvalue}
+	card := cards.StandardCard{ID: 0, Suit: cardsuit, Value: cardvalue}
 	if card.Name() != expected_val {
 		t.Error("Card Value did not match expectedvalue")
 	}
