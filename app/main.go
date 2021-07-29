@@ -1,9 +1,8 @@
 package main
 
 import (
-	"card_api/app/handlers"
+	"card_api/handlers"
 	"net/http"
-	//"fmt"
 )
 
 func main() {

@@ -1,7 +1,7 @@
 package main_tests
 
 import (
-	"card_api/app/handlers"
+	"card_api/handlers"
 	"net/http"
 	"net/http/httptest"
 	"testing"

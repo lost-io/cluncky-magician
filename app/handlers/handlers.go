@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"card_api/app/cards"
+	"card_api/cards"
 	"encoding/json"
 	"net/http"
 	"strconv"
