@@ -1,7 +1,7 @@
 package main_tests
 
 import (
-	"card_api/app/cards"
+	"card_api/cards"
 	"testing"
 )
 
