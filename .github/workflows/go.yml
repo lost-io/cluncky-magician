@@ -18,10 +18,8 @@ jobs:
       with:
         go-version: 1.16
 
-    - name: Build
-      run: cd /app
-      run: go build -v ./...
+    - name: Build 
+      run: cd/app && go build -v ./...
 
     - name: Test
-      run: cd/app
-      run: go test -v ./tests
+      run: cd/app && go test -v ./tests
